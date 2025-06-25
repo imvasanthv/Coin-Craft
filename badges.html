@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coin Craft - Achievements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./asset/libs/datatables.min.css" />
+  <link rel="stylesheet" href="./asset/css/style.css" />
+</head>
+
+<body>
+  <div class="main_container">
+    <div class="aside select-none hidden md:block" id="aside">
+      <div class="sidebar_header flex justify-between items-center px-4">
+        <div class="logo">
+          <div class="full-logo">
+            <img src="" alt="" class="expent_logo" />
+            <a class="dropdown-item" href="index.html"><span class="text-nowrap">Coin Craft</span></a>
+          </div>
+          <div class="small-logo hidden">
+            <img src="img/icon.png" alt="" class="small_logo" />
+            <span></span>
+          </div>
+        </div>
+        <div class="toggler">
+          <i class="fa-regular fa-circle-dot" id="toggler"></i>
+        </div>
+      </div>
+      <div class="sidebar_body">
+        <ul class="sidebar_wrapper">
+          <li class="sidevar_item_wrapper">
+            <a href="dashboard.html" class="sidebar_item flex justify-between" style="text-decoration: none;">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="title">Dashboard</span>
+              </p>
+            </a>
+          </li>
+          <li class="sidevar_item_wrapper">
+            <a href="learning.html" class="sidebar_item flex justify-between" style="text-decoration: none;">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-book-open-reader text-white"></i>
+                <span class="title">My Learning</span>
+              </p>
+            </a>
+          </li>
+          <li class="sidevar_item_wrapper">
+              <a href="badges.html" class="sidebar_item flex justify-between active" style="text-decoration: none;">
+
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-award"></i>
+                <span class="title text-white font-semibold ml-2">Achievements</span>
+              </p>
+            </a>
+            
+          </li>
+          <li class="sidevar_item_wrapper">
+            <a href="community.html" class="sidebar_item flex justify-between" style="text-decoration: none;">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-users"></i>
+                <span class="title">Community</span>
+              </p>
+            </a>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="contant">
+      <div class="header flex justify-between items-center">
+        <div class="header-left">
+          <div class="mobile_toggler text-2xl cursor-pointer md:hidden">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="header-right flex items-center gap-6">
+          <h2 id="welcome-message"></h2>
+          <span id="welcome-message" class="text-sm font-semibold text-gray-700"></span>
+          <div class="user-profile pr-2 cursor-pointer relative dropdown">
+            <div class="nav-profile-img-container">
+              <img src="/asset/image/user.png" alt="" />
+            </div>
+            <div class="dropdown-wrapper hidden">
+              <div class="dropdown-contant">
+                <div
+                  class="user-info flex bg-[var(--primary-color)] text-white items-center justify-between gap-3 px-4 py-2">
+                  <div class="image w-12 h-12 rounded-full border border-[var(--secondry-color)] p-1">
+                    <img src="/asset/image/user.png" alt="">
+                  </div>
+                  <div class="user-detail">
+                    <h1 id="user-name">Loading...</h1>
+                    <p id="user-email">Loading...</p>
+                  </div>
+                </div>
+                <div class="links">
+                  <ul class="dropdown-link flex flex-col">
+                    <a href="#" class="dropdown-link-item px-4 py-2 hover:bg-[var(--secondry-color)]">
+                      <li> <a  href="dashboard.html">Profile</a></li>
+                  
+                    </a>
+                    <a href="#" class="dropdown-link-item px-4 py-2 hover:bg-[var(--secondry-color)]">
+                      <li id="logout-btn" style="cursor: pointer; color: red;">Logout</li>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contant_area">
+          <div class="p-6">
+    <h1 class="text-3xl font-bold mb-6">🎖️ My Badges</h1>
+
+    <!-- Badge Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Badge Card -->
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="img/badges2.png" alt="Badge 1" class="w-20 h-20 mb-3" />
+        <h2 class="font-semibold text-lg mb-1">Beginner Explorer</h2>
+        <p class="text-green-500 text-sm">✅ Earned</p>
+      </div>
+
+      <!-- Badge Card -->
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="img/badges3.png" alt="Badge 2" class="w-20 h-20 mb-3 grayscale opacity-50" />
+        <h2 class="font-semibold text-lg mb-1">Financial Guru</h2>
+        <p class="text-red-500 text-sm">🔒 Locked</p>
+      </div>
+
+      <!-- Badge Card -->
+      <div class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center">
+        <img src="img/badge1.png" alt="Badge 3" class="w-20 h-20 mb-3 grayscale opacity-50" />
+        <h2 class="font-semibold text-lg mb-1">Budget Master</h2>
+        <p class="text-red-500 text-sm">🔒 Locked</p>
+      </div>
+
+      <!-- Add more badges below -->
+    </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="./asset/libs/jquery-3.7.1.min.js"></script>
+<script src="./asset/libs/datatables.min.js"></script>
+<script src="./asset/libs/chart.js"></script>
+<script src="./asset/js/index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+<script src="main.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyARC8wLgEQRyPy7IDJGF4VbvslCehlfltw",
+    authDomain: "coincraft-internship.firebaseapp.com",
+    projectId: "coincraft-internship",
+    storageBucket: "coincraft-internship.appspot.com",
+    messagingSenderId: "954379397018",
+    appId: "1:954379397018:web:f0dc728d28478905143c23"
+  };
+
+ const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  const welcome = document.getElementById("welcome-message");
+
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.email) {
+      const email = user.email;
+      const usernameOnly = email.split("@")[0];
+      if (welcome) {
+        welcome.textContent = `Welcome, ${usernameOnly}!`;
+      }
+    } else {
+     
+      window.location.href = "login.html";
+    }
+  });
+  const nameEl = document.getElementById("user-name");
+  const emailEl = document.getElementById("user-email");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  // ✅ Show Name & Email
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const email = user.email;
+      const uid = user.uid;
+
+      try {
+        const docRef = doc(db, "users", uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          nameEl.textContent = userData.username || email.split('@')[0];
+          emailEl.textContent = email;
+        } else {
+          nameEl.textContent = email.split('@')[0];
+          emailEl.textContent = email;
+        }
+      } catch (err) {
+        console.error("Error fetching user document:", err);
+        nameEl.textContent = email.split('@')[0];
+        emailEl.textContent = email;
+      }
+    } else {
+      window.location.href = "login.html"; // Not logged in
+    }
+  });
+
+  // ✅ Logout Handler
+  
+
+logoutBtn?.addEventListener("click", async () => {
+  try {
+    await signOut(auth);
+    localStorage.clear();
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+  } catch (error) {
+    console.error("Logout Error:", error);
+    alert("Failed to logout.");
+  }
+});
+  
+
+</script>
+
+</html>

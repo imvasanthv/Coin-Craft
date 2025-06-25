@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coin Craft - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./asset/libs/datatables.min.css" />
+  <link rel="stylesheet" href="./asset/css/style.css" />
+</head>
+
+<body>
+  <div class="main_container">
+    <div class="aside select-none hidden md:block" id="aside">
+      <div class="sidebar_header flex justify-between items-center px-4">
+        <div class="logo">
+          <div class="full-logo">
+            <img src="" alt="" class="expent_logo" />
+            <a class="dropdown-item" href="index.html"><span class="text-nowrap">Coin Craft</span></a>
+          </div>
+          <div class="small-logo hidden">
+            <img src="img/icon.png" alt="" class="small_logo" />
+            <span>GR</span>
+          </div>
+        </div>
+        <div class="toggler">
+          <i class="fa-regular fa-circle-dot" id="toggler"></i>
+        </div>
+      </div>
+      <div class="sidebar_body">
+        <ul class="sidebar_wrapper">
+          <li class="sidevar_item_wrapper">
+            <a href="dashboard.html" class="sidebar_item flex justify-between active" style="text-decoration: none;">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-gauge"></i>
+                <span class="title text-white font-semibold ml-2">Dashboard</span>
+              </p>
+            </a>
+          </li>
+          <li class="sidevar_item_wrapper">
+            <a href="learning.html" class="sidebar_item flex justify-between" style="text-decoration: none;">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-book-open-reader text-white"></i>
+                <span class="title">My Learning</span>
+              </p>
+            </a>
+          </li>
+          <li class="sidevar_item_wrapper">
+            <div class="sidebar_item flex justify-between">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-award"></i>
+                <span class="title">Achievements</span>
+              </p>
+            </div>
+            
+          </li>
+          <li class="sidevar_item_wrapper">
+            <div class="sidebar_item flex justify-between">
+              <p class="sidebar_logo flex items-center">
+                <i class="fa-solid fa-users"></i>
+                <span class="title">Community</span>
+              </p>
+            </div>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="contant">
+      <div class="header flex justify-between items-center">
+        <div class="header-left">
+          <div class="mobile_toggler text-2xl cursor-pointer md:hidden">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="header-right flex items-center gap-6">
+          <h2 id="welcome-message"></h2>
+          <span id="welcome-message" class="text-sm font-semibold text-gray-700"></span>
+          <div class="user-profile pr-2 cursor-pointer relative dropdown">
+            <div class="nav-profile-img-container">
+              <img src="/asset/image/user.png" alt="" />
+            </div>
+            <div class="dropdown-wrapper hidden">
+              <div class="dropdown-contant">
+                <div
+                  class="user-info flex bg-[var(--primary-color)] text-white items-center justify-between gap-3 px-4 py-2">
+                  <div class="image w-12 h-12 rounded-full border border-[var(--secondry-color)] p-1">
+                    <img src="/asset/image/user.png" alt="">
+                  </div>
+                  <div class="user-detail">
+                    <h1 id="user-name">Loading...</h1>
+                    <p id="user-email">Loading...</p>
+                  </div>
+                </div>
+                <div class="links">
+                  <ul class="dropdown-link flex flex-col">
+                    <a href="#" class="dropdown-link-item px-4 py-2 hover:bg-[var(--secondry-color)]">
+                      <li> <a  href="dashboard.html">Profile</a></li>
+                  
+                    </a>
+                    <a href="#" class="dropdown-link-item px-4 py-2 hover:bg-[var(--secondry-color)]">
+                      <li id="logout-btn" style="cursor: pointer; color: red;">Logout</li>
+                    </a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contant_area">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="total_user">
+              <div class="dashboard_card cursor-pointer">
+                <div class="hover:pl-1 transition-all duration-200 h-20 bg-[var(--primary-color)] rounded-lg shadow-md">
+                  <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                      <p class="font-bold">Streaks</p>
+                      <p class="text-lg">0</p>
+                    </div>
+                    <div class="my-auto">
+  <i class="fas fa-fire text-red-600 text-xl"></i>
+</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="total_rentel">
+              <div class="dashboard_card cursor-pointer">
+                <div class="hover:pl-1 transition-all duration-200 h-20 bg-[var(--primary-color)] rounded-lg shadow-md">
+                  <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                      <p class="font-bold">XPs</p>
+                      <p class="text-lg">0</p>
+                    </div>
+                    <div class="my-auto">
+  <i class="fas fa-bolt text-yellow-500 text-xl"></i> <!-- XP Icon -->
+</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rental_return">
+              <div class="dashboard_card cursor-pointer">
+                <div class="hover:pl-1 transition-all duration-200 h-20 bg-[var(--primary-color)] rounded-lg shadow-md">
+                  <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                      <p class="font-bold">Badges</p>
+                      <p class="text-lg">-</p>
+                    </div>
+                    <div class="my-auto">
+  <i class="fas fa-award text-indigo-600 text-xl"></i> <!-- Badges Icon -->
+</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 py-4">
+            <div class="chart_container">
+              <div class="chart_header">
+                <span class="text-2xl">Monthly Rent</span>
+              </div>
+              <div class="chart">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+            <div class="chart_container">
+              <div class="chart_header">
+                <span class="text-2xl">Monthly Expense</span>
+              </div>
+              <div class="chart">
+                <canvas id="expense_chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="./asset/libs/jquery-3.7.1.min.js"></script>
+<script src="./asset/libs/datatables.min.js"></script>
+<script src="./asset/libs/chart.js"></script>
+<script src="./asset/js/index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+<script src="main.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyARC8wLgEQRyPy7IDJGF4VbvslCehlfltw",
+    authDomain: "coincraft-internship.firebaseapp.com",
+    projectId: "coincraft-internship",
+    storageBucket: "coincraft-internship.appspot.com",
+    messagingSenderId: "954379397018",
+    appId: "1:954379397018:web:f0dc728d28478905143c23"
+  };
+
+ const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  const welcome = document.getElementById("welcome-message");
+
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.email) {
+      const email = user.email;
+      const usernameOnly = email.split("@")[0];
+      if (welcome) {
+        welcome.textContent = `Welcome, ${usernameOnly}!`;
+      }
+    } else {
+     
+      window.location.href = "login.html";
+    }
+  });
+  const nameEl = document.getElementById("user-name");
+  const emailEl = document.getElementById("user-email");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  // ✅ Show Name & Email
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const email = user.email;
+      const uid = user.uid;
+
+      try {
+        const docRef = doc(db, "users", uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          nameEl.textContent = userData.username || email.split('@')[0];
+          emailEl.textContent = email;
+        } else {
+          nameEl.textContent = email.split('@')[0];
+          emailEl.textContent = email;
+        }
+      } catch (err) {
+        console.error("Error fetching user document:", err);
+        nameEl.textContent = email.split('@')[0];
+        emailEl.textContent = email;
+      }
+    } else {
+      window.location.href = "login.html"; // Not logged in
+    }
+  });
+
+  // ✅ Logout Handler
+  
+
+logoutBtn?.addEventListener("click", async () => {
+  try {
+    await signOut(auth);
+    localStorage.clear();
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+  } catch (error) {
+    console.error("Logout Error:", error);
+    alert("Failed to logout.");
+  }
+});
+  $(document).ready(function () {
+  // === Chart 1: Learning Hours per Week ===
+  const ctx = document.getElementById("myChart"); // your first canvas element
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+      datasets: [
+        {
+          label: "Learning Hours",
+          data: [0,0,0,0], // customize this dynamically if needed
+          backgroundColor: "#4CAF50",
+          borderRadius: 5
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: "Weekly Learning Activity",
+          font: { size: 18 }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: "Hours Spent"
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: "Weeks"
+          }
+        }
+      }
+    }
+  });
+
+  // === Chart 2: Skill Proficiency ===
+  const expense = document.getElementById("expense_chart"); // your second canvas element
+
+  new Chart(expense, {
+    type: "bar",
+    data: {
+      labels: ["Budgeting", "Saving", "Investing", "Credit & Loans"],
+      datasets: [
+        {
+          label: "Proficiency (%)",
+          data: [0,0,0,0], // replace with real user scores
+          backgroundColor: "#2196F3",
+          borderRadius: 5
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      indexAxis: "y", // horizontal bars
+      plugins: {
+        title: {
+          display: true,
+          text: "Skill Mastery Overview",
+          font: { size: 18 }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 100,
+          title: {
+            display: true,
+            text: "Proficiency %"
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Topics"
+          }
+        }
+      }
+    }
+  });
+});
+
+</script>
+
+</html>
